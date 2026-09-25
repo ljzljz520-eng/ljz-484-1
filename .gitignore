@@ -23,3 +23,7 @@ __pycache__/
 *.log
 .env
 .env.*
+
+# 剧本管理项目：后端编译产物与运行时数据
+script-backend/out/
+script-backend/data/
