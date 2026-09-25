@@ -23,3 +23,12 @@ __pycache__/
 *.log
 .env
 .env.*
+
+# 剧本项目：Java 编译产物
+*.class
+out/
+script-backend/sources.txt
+
+# 剧本项目：运行时数据（保留目录，首次启动会自动生成示例剧本）
+script-backend/data/*.json
+script-backend/data/*.tmp

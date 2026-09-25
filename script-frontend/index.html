@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>剧本列表 · 剧本创作管理</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📜</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>📜 剧本创作管理</h1>
+    <span class="brand-sub">SCRIPT STUDIO</span>
+  </header>
+
+  <main class="container">
+    <div class="toolbar">
+      <div class="filters" id="statusFilters">
+        <button class="chip active" data-status="">全部</button>
+        <button class="chip" data-status="DRAFT">草稿</button>
+        <button class="chip" data-status="REVISING">修改中</button>
+        <button class="chip" data-status="FINAL">已定稿</button>
+      </div>
+      <button class="btn primary" id="btnNew">＋ 新建剧本</button>
+    </div>
+
+    <div id="scriptList"></div>
+    <p id="emptyTip" class="empty hidden">还没有剧本，点击右上角「新建剧本」开始创作吧！</p>
+  </main>
+
+  <!-- 新建剧本弹窗 -->
+  <div class="modal-mask hidden" id="newModal">
+    <div class="modal">
+      <h2>新建剧本</h2>
+      <label>剧名 *
+        <input id="newTitle" placeholder="例如：雨夜书店" maxlength="60">
+      </label>
+      <label>作者
+        <input id="newAuthor" placeholder="你的名字" maxlength="30">
+      </label>
+      <label>简介
+        <textarea id="newSynopsis" rows="3" placeholder="一句话介绍这个故事"></textarea>
+      </label>
+      <div class="modal-actions">
+        <button class="btn" id="btnCancelNew">取消</button>
+        <button class="btn primary" id="btnCreateNew">创建</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/list.js"></script>
+</body>
+</html>
